@@ -1,4 +1,3 @@
-__author__ = 'sergey'
 import time
 import random
 
@@ -27,7 +26,6 @@ class Subject:
     def register(self, listener):
         self.listeners.append(listener)
         #print 'register'
-
 
 
 if __name__ == '__main__':
