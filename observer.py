@@ -30,7 +30,8 @@ class Subject:
         #print 'register'
 
     def unregister(self, listener):
-        pass
+        self.listeners.remove(listener)
+        #pass
 
     def notifyListeners(self):
         for listener in self.listeners:
@@ -44,7 +45,7 @@ if __name__ == '__main__':
     subscriber2 = Listener(newspaper, 'Nick')
 
     count = 1
-
+    #newspaper.unregister(subscriber1)
     while count < newspaper.exemplars:
         t = random.randrange(2, 5)
         time.sleep(t)
