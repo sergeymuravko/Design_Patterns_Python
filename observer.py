@@ -1,13 +1,14 @@
 import time
 import random
 
+
 class Listener:
     def __init__(self, subject, name):
         print 'create listeners ' + name
         self.name = name
         subject.register(self)
 
-    def __call__(self, *args, **kwargs):
+    def notify(self):
         print "I'm listen, ", self.name, '\n and go read'
 
 
@@ -21,11 +22,19 @@ class Subject:
 
     def doNews(self):
         print 'published,\n exemplar number -> ' + str(count) + ', time -> ' + str(time.clock())
-        #return
+        
+        self.notifyListeners()
 
     def register(self, listener):
         self.listeners.append(listener)
         #print 'register'
+
+    def unregister(self, listener):
+        pass
+
+    def notifyListeners(self):
+        for listener in self.listeners:
+            listener.notify()
 
 
 if __name__ == '__main__':
@@ -40,7 +49,6 @@ if __name__ == '__main__':
         t = random.randrange(2, 5)
         time.sleep(t)
         newspaper.doNews()
-        subscriber1()
-        subscriber2()
         count += 1
+
 
