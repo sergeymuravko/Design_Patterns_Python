@@ -2,7 +2,6 @@ __author__ = 'sergey'
 import time
 import random
 
-
 class Listener:
     def __init__(self, subject, name):
         print 'create listeners ' + name
@@ -10,7 +9,7 @@ class Listener:
         subject.register(self)
 
     def __call__(self, *args, **kwargs):
-        print "I'm listen, ", self.name
+        print "I'm listen, ", self.name, '\n and go read'
 
 
 class Subject:
@@ -23,7 +22,7 @@ class Subject:
 
     def doNews(self):
         print 'published,\n exemplar number -> ' + str(count) + ', time -> ' + str(time.clock())
-        return
+        #return
 
     def register(self, listener):
         self.listeners.append(listener)
