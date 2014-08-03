@@ -4,7 +4,7 @@ import random
 
 class Listener:
     def __init__(self, subject, name):
-        print 'create listeners ' + name
+        #print 'create listeners ' + name
         self.name = name
         subject.register(self)
 
