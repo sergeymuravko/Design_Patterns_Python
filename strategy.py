@@ -79,8 +79,8 @@ if __name__ == '__main__':
     BetaDuck.fly()
     BetaDuck.quack()
 
-    GammaDuck = WoodDuck('GammaDuck')
+    GammaDuck = WoodDuck('GammaDuck')   # can't quack and fly
     #GammaDuck.quack()
     #GammaDuck.fly()
-    Manok = DuckDecoy('DuckManok')
+    Manok = DuckDecoy('DuckManok')  # can quack
     Manok.quack()
