@@ -2,9 +2,9 @@ __author__ = 'sergey'
 
 
 class AbstractDuck:
-
     def __init__(self, name):
         self.name = name
+        print "I'm " + name
 
     def setFly(self, method):
         self.fly = method
@@ -13,51 +13,74 @@ class AbstractDuck:
         self.quack = method
 
     def swim(self):
-        print "All ducks float!"
+        print "\tAll ducks float!"
 
 
+# to call a method through the "fly" of the object
 class Flying:
     # def __call__(self, *args, **kwargs):
-    #     print args
     #     print "I'm fly"
 
     def fly(self):
-        print "I'm fly-method"
+        print "\tI'm fly-method"
 
 
+# to call a method through the object
 class Quacking:
     def __call__(self, *args, **kwargs):
-        print "quack-quack"
+        print "\t... quack-quack ..."
 
 
 class DuckRedCrestedPochard(AbstractDuck):
     def __init__(self, name):
         AbstractDuck.__init__(self, name)
-        fly_instance = Flying()
-        self.setFly(fly_instance)
-    # def swim(self):
-    #     Swiming()
 
-
-class SantaCruz(AbstractDuck):
-    def __init__(self, name):
-        AbstractDuck.__init__(self, name)
         fly_instance = Flying()
-        self.setFly(fly_instance.fly())
+        self.setFly(fly_instance.fly)
+
         quack_instance = Quacking()
         self.setQuack(quack_instance)
 
 
-    # def swim(self):
-    #     Swim.swim()
+class SantaCruz(AbstractDuck):
+    def __init__(self, name):
+        #print "I'm " + name
+        AbstractDuck.__init__(self, name)
+
+        fly_instance = Flying()
+        self.setFly(fly_instance.fly)
+
+        quack_instance = Quacking()
+        self.setQuack(quack_instance)
+
+
+class WoodDuck(AbstractDuck):
+    def __init__(self, name):
+        #print "I'm " + name
+        AbstractDuck.__init__(self, name)
+
+
+class DuckDecoy(AbstractDuck):
+    def __init__(self, name):
+        AbstractDuck.__init__(self, name)
+
+        quack_instance = Quacking()
+        self.setQuack(quack_instance)
 
 
 if __name__ == '__main__':
-    # FredyDuck = DuckRedCrestedPochard('FredyDuck')
-    # FredyDuck.swim()
-    # #FredyDuck.fly()
-
     AlphaDuck = SantaCruz('AlphaDuck')
     AlphaDuck.swim()
     AlphaDuck.fly()
+    AlphaDuck.quack()
 
+    BetaDuck = DuckRedCrestedPochard('BetaDuck')
+    BetaDuck.swim()
+    BetaDuck.fly()
+    BetaDuck.quack()
+
+    GammaDuck = WoodDuck('GammaDuck')
+    #GammaDuck.quack()
+    #GammaDuck.fly()
+    Manok = DuckDecoy('DuckManok')
+    Manok.quack()
