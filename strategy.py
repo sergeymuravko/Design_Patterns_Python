@@ -17,8 +17,9 @@ class AbstractDuck:
 
 
 class Flying:
-    def __call__(self, *args, **kwargs):
-        print "I'm fly"
+    # def __call__(self, *args, **kwargs):
+    #     print args
+    #     print "I'm fly"
 
     def fly(self):
         print "I'm fly-method"
@@ -42,7 +43,7 @@ class SantaCruz(AbstractDuck):
     def __init__(self, name):
         AbstractDuck.__init__(self, name)
         fly_instance = Flying()
-        self.setFly(fly_instance)
+        self.setFly(fly_instance.fly())
         quack_instance = Quacking()
         self.setQuack(quack_instance)
 
