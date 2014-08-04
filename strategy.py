@@ -8,12 +8,12 @@ class AbstractDuck:
 
     def setFly(self, method):
         self.fly = method
-        #raise NotImplementedError()
 
+    def setQuack(self, method):
+        self.quack = method
 
-class Swiming:
-    def __call__(self, *args, **kwargs):
-        print "I'm swimming"
+    def swim(self):
+        print "All ducks float!"
 
 
 class Flying:
@@ -21,7 +21,7 @@ class Flying:
         print "I'm fly"
 
     def fly(self):
-        print "I'm fly"
+        print "I'm fly-method"
 
 
 class Quacking:
@@ -30,7 +30,10 @@ class Quacking:
 
 
 class DuckRedCrestedPochard(AbstractDuck):
-    swim = Swiming()
+    def __init__(self, name):
+        AbstractDuck.__init__(self, name)
+        fly_instance = Flying()
+        self.setFly(fly_instance)
     # def swim(self):
     #     Swiming()
 
@@ -40,6 +43,8 @@ class SantaCruz(AbstractDuck):
         AbstractDuck.__init__(self, name)
         fly_instance = Flying()
         self.setFly(fly_instance)
+        quack_instance = Quacking()
+        self.setQuack(quack_instance)
 
 
     # def swim(self):
@@ -52,6 +57,6 @@ if __name__ == '__main__':
     # #FredyDuck.fly()
 
     AlphaDuck = SantaCruz('AlphaDuck')
-    #AlphaDuck.swim()
+    AlphaDuck.swim()
     AlphaDuck.fly()
 
