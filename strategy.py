@@ -44,7 +44,6 @@ class DuckRedCrestedPochard(AbstractDuck):
 
 class SantaCruz(AbstractDuck):
     def __init__(self, name):
-        #print "I'm " + name
         AbstractDuck.__init__(self, name)
 
         fly_instance = Flying()
@@ -56,7 +55,6 @@ class SantaCruz(AbstractDuck):
 
 class WoodDuck(AbstractDuck):
     def __init__(self, name):
-        #print "I'm " + name
         AbstractDuck.__init__(self, name)
 
 
