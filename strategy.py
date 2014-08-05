@@ -67,12 +67,12 @@ class DuckDecoy(AbstractDuck):
 
 
 if __name__ == '__main__':
-    AlphaDuck = SantaCruz('AlphaDuck')
+    AlphaDuck = SantaCruz('AlphaDuck')  # can quack and fly
     AlphaDuck.swim()
     AlphaDuck.fly()
     AlphaDuck.quack()
 
-    BetaDuck = DuckRedCrestedPochard('BetaDuck')
+    BetaDuck = DuckRedCrestedPochard('BetaDuck')  # can quack and fly
     BetaDuck.swim()
     BetaDuck.fly()
     BetaDuck.quack()
