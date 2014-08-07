@@ -16,7 +16,6 @@ class AbstractPizza:
     pizza = ""
 
     def get_pizza(self):
-
         return self.pizza
 
 
@@ -31,3 +30,5 @@ class ChicagoPizza(AbstractPizza):
 if __name__ == '__main__':
     pizza1 = PizzaFactory('ChicagoPizza')
     print pizza1.createPizza()
+    pizza2 = PizzaFactory('SanFranciscoPizza')
+    print pizza2.createPizza()
