@@ -7,10 +7,9 @@ class PizzaFactory:
         self.pizzaType = pizzaType
 
     def createPizza(self):
-        targetPizza = self.pizzaType#.capitalize()
-        #return globals()[targetPizza]()
-        self.pizza = globals()[targetPizza]()
-        print self.pizza
+        targetPizza = self.pizzaType
+        return globals()[targetPizza]()
+        #print self.pizza
 
 
 class AbstractPizza:
