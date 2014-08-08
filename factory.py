@@ -11,6 +11,8 @@ class PizzaFactory:
         return globals()[targetPizza]()
         #print self.pizza
 
+    #add method bake and cut in PizzaFactory
+    #bake, cut
 
 class AbstractPizza:
     pizza = ""
