@@ -23,7 +23,7 @@ class Subject:
     def do_news(self):
         print 'published,\n exemplar number -> ' + str(count) + ', time -> ' + str(time.clock())
         
-        self.notifyListeners()
+        self.notify_listeners()
 
     def register(self, listener):
         self.listeners.append(listener)
@@ -33,7 +33,7 @@ class Subject:
         self.listeners.remove(listener)
         #pass
 
-    def notifyListeners(self):
+    def notify_listeners(self):
         for listener in self.listeners:
             listener.notify()
 
