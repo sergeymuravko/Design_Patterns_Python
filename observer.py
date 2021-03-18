@@ -20,7 +20,7 @@ class Subject:
         print 'Subject name -> "' + name + '"'
         #self.doNews()
 
-    def doNews(self):
+    def do_news(self):
         print 'published,\n exemplar number -> ' + str(count) + ', time -> ' + str(time.clock())
         
         self.notifyListeners()
@@ -49,7 +49,7 @@ if __name__ == '__main__':
     while count < newspaper.exemplars:
         t = random.randrange(2, 5)
         time.sleep(t)
-        newspaper.doNews()
+        newspaper.do_news()
         count += 1
 
 
